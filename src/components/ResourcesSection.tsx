@@ -8,8 +8,7 @@ const interactiveDemos = [
     description: 'Explore a vulnerable login form and learn how to exploit and fix SQL injection vulnerabilities in a safe environment.',
     type: 'vulnerability' as const,
     difficulty: 'beginner' as const,
-    stackblitzUrl: 'https://stackblitz.com/edit/sql-injection-demo',
-    boltPrompt: 'Create a Node.js application with a vulnerable login form that demonstrates SQL injection, then show how to fix it with parameterized queries',
+    demoUrl: '#',
     tags: ['SQL Injection', 'Web Security', 'Database Security']
   },
   {
@@ -17,8 +16,7 @@ const interactiveDemos = [
     description: 'Interactive environment to understand Cross-Site Scripting attacks and learn proper input sanitization techniques.',
     type: 'vulnerability' as const,
     difficulty: 'intermediate' as const,
-    stackblitzUrl: 'https://stackblitz.com/edit/xss-demo-playground',
-    boltPrompt: 'Build a comment system that demonstrates XSS vulnerabilities and shows how to implement proper input sanitization',
+    demoUrl: '#',
     tags: ['XSS', 'Input Validation', 'Frontend Security']
   },
   {
@@ -26,8 +24,7 @@ const interactiveDemos = [
     description: 'Learn about different hashing algorithms and see how secure password hashing works in practice.',
     type: 'tool' as const,
     difficulty: 'beginner' as const,
-    stackblitzUrl: 'https://stackblitz.com/edit/password-hash-tool',
-    boltPrompt: 'Create a web-based password hashing tool that demonstrates bcrypt, scrypt, and argon2 with timing comparisons',
+    demoUrl: '#',
     tags: ['Cryptography', 'Password Security', 'Hashing']
   },
   {
@@ -35,8 +32,7 @@ const interactiveDemos = [
     description: 'Analyze JWT tokens, identify vulnerabilities, and implement secure JWT handling practices.',
     type: 'challenge' as const,
     difficulty: 'advanced' as const,
-    stackblitzUrl: 'https://stackblitz.com/edit/jwt-security-challenge',
-    boltPrompt: 'Create a JWT security challenge where users must identify and fix common JWT vulnerabilities like weak secrets and algorithm confusion',
+    demoUrl: '#',
     tags: ['JWT', 'Authentication', 'Token Security']
   },
   {
@@ -44,8 +40,7 @@ const interactiveDemos = [
     description: 'Production-ready Node.js API template with authentication, rate limiting, and security best practices.',
     type: 'template' as const,
     difficulty: 'intermediate' as const,
-    stackblitzUrl: 'https://stackblitz.com/edit/secure-api-template',
-    boltPrompt: 'Generate a secure Node.js API template with JWT authentication, rate limiting, input validation, and security headers',
+    demoUrl: '#',
     tags: ['API Security', 'Node.js', 'Best Practices']
   },
   {
@@ -53,8 +48,7 @@ const interactiveDemos = [
     description: 'Educational port scanning tool to understand network reconnaissance and security assessment techniques.',
     type: 'tool' as const,
     difficulty: 'advanced' as const,
-    stackblitzUrl: 'https://stackblitz.com/edit/network-port-scanner',
-    boltPrompt: 'Build a web-based network port scanner simulation that demonstrates how port scanning works and detection methods',
+    demoUrl: '#',
     tags: ['Network Security', 'Reconnaissance', 'Penetration Testing']
   }
 ];
@@ -77,7 +71,7 @@ export const ResourcesSection: React.FC = () => {
           
           <p className="text-lg text-slate-300 mb-8 max-w-3xl mx-auto">
             Hands-on cybersecurity learning with interactive demos, vulnerability playgrounds, and security tools. 
-            Practice in safe environments powered by StackBlitz and enhanced with AI assistance from Bolt.new.
+            Practice in safe, controlled environments designed for learning and experimentation.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-12">
@@ -121,28 +115,24 @@ export const ResourcesSection: React.FC = () => {
         <div className="mt-12 text-center">
           <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
             <h3 className="text-xl font-semibold text-white mb-4">
-              Want to Create Your Own Security Labs?
+              Want to Learn More About Cybersecurity?
             </h3>
             <p className="text-slate-300 mb-6">
-              Use Bolt.new to generate custom cybersecurity demos and learning environments with AI assistance.
+              Explore our comprehensive collection of articles, tutorials, and hands-on labs designed to enhance your security knowledge.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://bolt.new"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5 transition-all duration-200"
+              <button
+                onClick={() => document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transform hover:-translate-y-0.5 transition-all duration-200"
               >
-                Try Bolt.new
-              </a>
-              <a
-                href="https://stackblitz.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                Read Our Articles
+              </button>
+              <button
+                onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-6 py-3 border border-slate-600 text-slate-300 font-semibold rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-all duration-200"
               >
-                Explore StackBlitz
-              </a>
+                Subscribe for Updates
+              </button>
             </div>
           </div>
         </div>

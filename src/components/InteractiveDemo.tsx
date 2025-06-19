@@ -6,8 +6,7 @@ interface InteractiveDemoProps {
   description: string;
   type: 'vulnerability' | 'tool' | 'challenge' | 'template';
   difficulty: 'beginner' | 'intermediate' | 'advanced';
-  stackblitzUrl?: string;
-  boltPrompt?: string;
+  demoUrl?: string;
   tags: string[];
 }
 
@@ -16,8 +15,7 @@ export const InteractiveDemo: React.FC<InteractiveDemoProps> = ({
   description,
   type,
   difficulty,
-  stackblitzUrl,
-  boltPrompt,
+  demoUrl,
   tags
 }) => {
   const [showEmbed, setShowEmbed] = useState(false);
@@ -76,7 +74,7 @@ export const InteractiveDemo: React.FC<InteractiveDemoProps> = ({
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          {stackblitzUrl && (
+          {demoUrl && (
             <>
               <button
                 onClick={() => setShowEmbed(!showEmbed)}
@@ -86,31 +84,22 @@ export const InteractiveDemo: React.FC<InteractiveDemoProps> = ({
                 {showEmbed ? 'Hide Demo' : 'Try Interactive Demo'}
               </button>
               <a
-                href={stackblitzUrl}
+                href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center px-4 py-2 bg-slate-700 text-slate-300 border border-slate-600 rounded-lg hover:bg-slate-600 transition-colors"
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
-                Open in StackBlitz
+                Open Full Demo
               </a>
             </>
           )}
-          {boltPrompt && (
-            <button
-              onClick={() => window.open(`https://bolt.new?prompt=${encodeURIComponent(boltPrompt)}`, '_blank')}
-              className="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 border border-purple-500/30 rounded-lg hover:from-purple-500/30 hover:to-pink-500/30 transition-all"
-            >
-              <Shield className="h-4 w-4 mr-2" />
-              Try with Bolt.new
-            </button>
-          )}
         </div>
 
-        {showEmbed && stackblitzUrl && (
+        {showEmbed && demoUrl && (
           <div className="mt-6 border-t border-slate-700 pt-6">
             <iframe
-              src={`${stackblitzUrl}?embed=1&file=index.js&hideNavigation=1&hideDevTools=1`}
+              src={`${demoUrl}?embed=1&file=index.js&hideNavigation=1&hideDevTools=1`}
               className="w-full h-96 border-0 rounded-lg"
               title={title}
               allow="clipboard-write; encrypted-media; geolocation; hid; type-attributes; usb; xr-spatial-tracking"

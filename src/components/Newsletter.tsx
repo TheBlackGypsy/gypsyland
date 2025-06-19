@@ -15,7 +15,7 @@ export const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700">
+    <section id="newsletter" className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex justify-center mb-6">
