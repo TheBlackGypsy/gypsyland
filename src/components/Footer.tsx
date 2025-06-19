@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
               <div className="grid grid-cols-2 gap-3">
                 {/* LinkedIn */}
                 <a 
-                  href="https://linkedin.com/in/your-profile" 
+                  href=https://www.linkedin.com/in/quintinmcfadden/
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 p-3 bg-slate-800/50 border border-slate-700 rounded-lg hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-200 group"
