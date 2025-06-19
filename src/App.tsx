@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CategoryFilter } from './components/CategoryFilter';
 import { BlogCard } from './components/BlogCard';
+import { ResourcesSection } from './components/ResourcesSection';
 import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 import { blogPosts } from './data/blogPosts';
@@ -31,6 +32,9 @@ function App() {
     <div className="min-h-screen bg-slate-900">
       <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       <Hero />
+      
+      {/* Interactive Resources Section */}
+      <ResourcesSection />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Category Filter */}

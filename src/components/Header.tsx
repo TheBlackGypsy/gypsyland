@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Menu, X, Shield, Bell, User } from 'lucide-react';
+import { Search, Menu, X, Shield, Bell, User, Code } from 'lucide-react';
 
 interface HeaderProps {
   searchQuery: string;
@@ -8,6 +8,14 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ searchQuery, onSearchChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="bg-slate-900/95 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
@@ -30,8 +38,14 @@ export const Header: React.FC<HeaderProps> = ({ searchQuery, onSearchChange }) =
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Home</a>
+            <button 
+              onClick={() => scrollToSection('resources')}
+              className="text-slate-300 hover:text-cyan-400 transition-colors font-medium flex items-center"
+            >
+              <Code className="h-4 w-4 mr-1" />
+              Labs
+            </button>
             <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Articles</a>
-            <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Resources</a>
             <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">About</a>
             <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Contact</a>
           </nav>
@@ -71,8 +85,14 @@ export const Header: React.FC<HeaderProps> = ({ searchQuery, onSearchChange }) =
           <div className="md:hidden py-4 border-t border-slate-800">
             <nav className="flex flex-col space-y-4">
               <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Home</a>
+              <button 
+                onClick={() => scrollToSection('resources')}
+                className="text-slate-300 hover:text-cyan-400 transition-colors font-medium flex items-center text-left"
+              >
+                <Code className="h-4 w-4 mr-1" />
+                Interactive Labs
+              </button>
               <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Articles</a>
-              <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Resources</a>
               <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">About</a>
               <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Contact</a>
             </nav>
