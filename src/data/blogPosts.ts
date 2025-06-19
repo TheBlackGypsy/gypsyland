@@ -2,6 +2,102 @@ import { BlogPost } from '../types/blog';
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '7',
+    title: 'My Journey Learning Vulnerability Detection: From Theory to Practice',
+    excerpt: 'A personal account of diving into cybersecurity and discovering the fascinating world of vulnerability detection. Here\'s what I\'ve learned so far and the challenges I\'ve encountered.',
+    content: `Starting my cybersecurity journey has been both exciting and overwhelming. One area that has particularly captured my attention is vulnerability detection - the art and science of finding security weaknesses before the bad guys do.
+
+## Why Vulnerability Detection?
+
+When I first started learning about cybersecurity, I was amazed by how many different attack vectors exist. From SQL injection to buffer overflows, cross-site scripting to privilege escalation - the attack surface seems endless. This realization led me to focus on vulnerability detection because I believe that finding and fixing vulnerabilities proactively is one of the most impactful ways to improve security.
+
+## What I'm Learning
+
+### Static Code Analysis
+I've been diving deep into static analysis tools like SonarQube and CodeQL. Learning to read code with a security mindset has been challenging but rewarding. I'm starting to recognize common patterns that lead to vulnerabilities:
+
+- Unsanitized user input
+- Improper error handling
+- Weak authentication mechanisms
+- Insecure direct object references
+
+### Dynamic Testing Techniques
+Hands-on testing has been incredibly valuable. I've been practicing with:
+
+- **Web application scanners** like OWASP ZAP and Burp Suite
+- **Network vulnerability scanners** such as Nessus and OpenVAS
+- **Manual testing techniques** for finding logic flaws that automated tools miss
+
+### Understanding the OWASP Top 10
+Working through each vulnerability category has given me a solid foundation. I've set up intentionally vulnerable applications like DVWA and WebGoat to practice identifying and exploiting these common weaknesses in a safe environment.
+
+## Challenges I've Faced
+
+### Information Overload
+The cybersecurity field is vast, and it's easy to feel overwhelmed. I've learned to focus on one area at a time and build depth before moving on to new topics.
+
+### False Positives
+Learning to distinguish between real vulnerabilities and false positives has been tricky. Understanding the context and business logic is crucial for accurate assessment.
+
+### Keeping Up with New Threats
+The threat landscape evolves rapidly. I've started following security researchers on Twitter and subscribing to vulnerability databases to stay current.
+
+## Tools I'm Mastering
+
+### Automated Scanners
+- **Nmap** for network discovery and port scanning
+- **Nikto** for web server vulnerability scanning
+- **SQLmap** for automated SQL injection testing
+
+### Manual Testing Tools
+- **Burp Suite** for comprehensive web application testing
+- **OWASP ZAP** as a free alternative for web app security testing
+- **Metasploit** for understanding exploit development
+
+### Code Review Tools
+- **Semgrep** for custom rule-based static analysis
+- **Bandit** for Python security linting
+- **ESLint security plugins** for JavaScript applications
+
+## What's Next?
+
+I'm planning to dive deeper into:
+
+1. **Advanced persistent threat (APT) detection techniques**
+2. **Machine learning applications in vulnerability discovery**
+3. **Cloud security assessment methodologies**
+4. **Mobile application security testing**
+
+## Key Takeaways So Far
+
+- **Practice is essential** - Reading about vulnerabilities is different from finding them
+- **Context matters** - Not every potential issue is a real security risk
+- **Automation and manual testing complement each other** - Neither alone is sufficient
+- **Documentation is crucial** - Clear vulnerability reports help developers fix issues effectively
+
+## Resources That Have Helped Me
+
+- **PortSwigger Web Security Academy** - Excellent hands-on labs
+- **OWASP Testing Guide** - Comprehensive methodology reference
+- **VulnHub and HackTheBox** - Practice environments for skill development
+- **Security podcasts and blogs** - Staying current with industry trends
+
+Learning vulnerability detection has been challenging but incredibly rewarding. Every vulnerability I find and help fix makes systems a little bit safer. If you're starting your own cybersecurity journey, I encourage you to get hands-on experience as soon as possible - there's no substitute for practical learning.
+
+The field is constantly evolving, which means there's always something new to learn. That's what makes it so exciting!`,
+    author: {
+      name: 'Alex Morgan',
+      role: 'Cybersecurity Student',
+      avatar: 'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
+    },
+    category: 'Learning Journey',
+    tags: ['Vulnerability Detection', 'Learning', 'Personal Experience', 'Career Development'],
+    publishedAt: '2024-01-20',
+    readingTime: 7,
+    featured: true,
+    imageUrl: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800'
+  },
+  {
     id: '1',
     title: 'Zero Trust Security: The Future of Enterprise Defense',
     excerpt: 'Explore how Zero Trust architecture is revolutionizing cybersecurity by eliminating implicit trust and continuously validating every transaction.',
@@ -56,7 +152,7 @@ Organizations are successfully implementing AI in various security domains, from
     tags: ['Artificial Intelligence', 'Machine Learning', 'Threat Detection'],
     publishedAt: '2024-01-12',
     readingTime: 6,
-    featured: true,
+    featured: false,
     imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
@@ -187,6 +283,7 @@ Having a well-tested incident response plan specifically for ransomware attacks 
 
 export const categories = [
   { id: 'all', name: 'All Posts', count: blogPosts.length },
+  { id: 'learning-journey', name: 'Learning Journey', count: blogPosts.filter(p => p.category === 'Learning Journey').length },
   { id: 'architecture', name: 'Architecture', count: blogPosts.filter(p => p.category === 'Architecture').length },
   { id: 'ai-ml', name: 'AI & ML', count: blogPosts.filter(p => p.category === 'AI & ML').length },
   { id: 'cloud-security', name: 'Cloud Security', count: blogPosts.filter(p => p.category === 'Cloud Security').length },
