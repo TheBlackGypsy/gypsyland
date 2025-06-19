@@ -1,6 +1,6 @@
 import React from 'react';
 import { InteractiveDemo } from './InteractiveDemo';
-import { Code, Shield, Zap, BookOpen } from 'lucide-react';
+import { Code, Shield, Zap, BookOpen, AlertTriangle } from 'lucide-react';
 
 const interactiveDemos = [
   {
