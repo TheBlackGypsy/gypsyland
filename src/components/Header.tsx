@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Menu, X, Shield, Bell, User, Code } from 'lucide-react';
+import { Search, Menu, X, Shield, Bell, User, Code, BookOpen } from 'lucide-react';
 
 interface HeaderProps {
   searchQuery: string;
@@ -39,13 +39,19 @@ export const Header: React.FC<HeaderProps> = ({ searchQuery, onSearchChange }) =
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Home</a>
             <button 
+              onClick={() => scrollToSection('blog')}
+              className="text-slate-300 hover:text-cyan-400 transition-colors font-medium flex items-center"
+            >
+              <BookOpen className="h-4 w-4 mr-1" />
+              Blog
+            </button>
+            <button 
               onClick={() => scrollToSection('resources')}
               className="text-slate-300 hover:text-cyan-400 transition-colors font-medium flex items-center"
             >
               <Code className="h-4 w-4 mr-1" />
               Labs
             </button>
-            <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Articles</a>
             <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">About</a>
             <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Contact</a>
           </nav>
@@ -86,13 +92,19 @@ export const Header: React.FC<HeaderProps> = ({ searchQuery, onSearchChange }) =
             <nav className="flex flex-col space-y-4">
               <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Home</a>
               <button 
+                onClick={() => scrollToSection('blog')}
+                className="text-slate-300 hover:text-cyan-400 transition-colors font-medium flex items-center text-left"
+              >
+                <BookOpen className="h-4 w-4 mr-1" />
+                Blog
+              </button>
+              <button 
                 onClick={() => scrollToSection('resources')}
                 className="text-slate-300 hover:text-cyan-400 transition-colors font-medium flex items-center text-left"
               >
                 <Code className="h-4 w-4 mr-1" />
                 Interactive Labs
               </button>
-              <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Articles</a>
               <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">About</a>
               <a href="#" className="text-slate-300 hover:text-cyan-400 transition-colors font-medium">Contact</a>
             </nav>
